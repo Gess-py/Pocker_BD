@@ -2,7 +2,8 @@ import sqlite3
 import sys
 import table_UI
 
-def make_bd(name_bd):
+def make_bd(name_bd : str):
+    name_bd = name_bd.replace(' ', '_')
     file_name = name_bd + '.bd'
     bd = sqlite3.connect(f'tournaments\\{file_name}')
 

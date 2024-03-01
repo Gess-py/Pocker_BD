@@ -17,6 +17,8 @@ def delete_bd(name_bd):
 
 def main():
     path = "tournaments"
+    if not os.path.isdir(path):
+        os.mkdir(path)
     tournaments_name = [file[:-3] for file in os.listdir(path) if file.endswith('.bd')]
 
     User_interface.sys.stdin = tournaments_name
